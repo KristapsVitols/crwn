@@ -8,6 +8,11 @@ const INITIAL_STATE = {
 
 const cartReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        case 'persist/REHYDRATE':
+            return {
+                ...state,
+                cartItems: []
+            };
         case cartActionTypes.TOGGLE_CART_HIDDEN:
             return {
                 ...state,
